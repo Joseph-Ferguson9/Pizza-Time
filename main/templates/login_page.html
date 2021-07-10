@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Glad your back dog, we've been missing your good energy.">
+    <title>Login</title>
+    {% load static %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=News+Cycle&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/font.css' %}">
+    <link rel="stylesheet" href="{% static 'css/login_page.css' %}">
+</head>
+<body>
+    <div id="wrapper">
+        <h1>Welcome back dude lets get this bread, cheese, and other things!</h1>
+        <div id="body-content">
+            {% if messages %}
+            <ul class="messages">
+                {% for message in messages %}
+                <li>{{ message }}</li>
+                {% endfor %}
+            </ul>
+            {% endif %}
+            <div id="content">
+                <form action="/user/login" method="POST">
+                    {% csrf_token %}
+                    <div class="form_action">
+                        <label for="email">Email</label>
+                        <input type="email" name="email">
+                    </div>
+                    <div class="form_action">
+                        <label for="password">Password</label>
+                        <input type="password" name="password">
+                    </div>
+                    <button type="submit">Go on! Get in there!</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</body>
+</html>

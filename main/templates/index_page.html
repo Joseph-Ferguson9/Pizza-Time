@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Ready for Pizza-Time?!">
+    <title>Pizza-Time</title>
+    {% load static %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=News+Cycle&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/font.css' %}">
+    <link rel="stylesheet" href="{% static 'css/index_page.css' %}">
+</head>
+
+<body>
+    <div id="wrapper">
+        <div id="heading">
+            <h1>Its Pizza-Time</h1>
+            <p>Who's ready for a flavor explosion in their mouth?</p>
+        </div>
+        <div id="accounts">
+            <div class="option">
+                <h1><a href="/user/login_page">Login</a></h1>
+                <p>Glad to see you back ya QT ;)</p>
+            </div>
+            <div class="option">
+                <h1><a href="/user/register_page">Register</a></h1>
+                <p>Your gonna have so much fun here!</p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
