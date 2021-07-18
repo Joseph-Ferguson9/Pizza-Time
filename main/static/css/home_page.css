@@ -1,0 +1,30 @@
+#wrapper {
+    max-width: 1400px;
+    width: 100%;
+    position: absolute;
+    left: 50%;
+    transform: translate(-50% , 0%);
+    margin: 10px 0px;
+    border: 2px dotted blue;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 0px 10px;
+}
+
+#loansome {
+    text-align: center;
+}
+
+#body-content {
+    display: flex;
+    justify-content: space-evenly;
+}
+
+.option {
+    max-width: 300px;
+}
+

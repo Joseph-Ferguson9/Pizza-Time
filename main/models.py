@@ -37,9 +37,6 @@ class UserManager(models.Manager):
             errors["l_name"] = "Submitted last name should be at least 2 characters"
         if not EMAIL_REGEX.match(postData['email']):
             errors['email'] = "Invalid email address"
-        users_with_email = Users.objects.filter(email=postData['email'])
-        if len(users_with_email) >= 1:
-            errors['duplicate'] = "Email already exists"
         if len(postData['address']) < 5:
             errors['address'] = "Address must be more than 5 characters"
         if len(postData['city']) < 2:

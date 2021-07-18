@@ -73,6 +73,45 @@ def update_info(request):
     user.save()
     return redirect('/user/account_page')
 
+def home_page(request):
+    if 'logged_user' not in request.session:
+        messages.error(request, "Please register or log in to be here!")
+        return redirect('/')
+    context = {
+        'logged_user': Users.objects.get(id=request.session['logged_user']),
+    }
+    return render(request, 'home_page.html', context)
+
+def craft_a_pizza_page(request):
+    if 'logged_user' not in request.session:
+        messages.error(request, "Please register or log in to be here!")
+        return redirect('/')
+    return render(request, 'craft_a_pizza_page.html')
+
+def craft_a_pizza_random(request):
+    if 'logged_user' not in request.session:
+        messages.error(request, "Please register or log in to be here!")
+        return redirect('/')
+    return render(request, 'craft_a_pizza_random.html')
+
+def craft_a_pizza_fav(request, user_id):
+    if 'logged_user' not in request.session:
+        messages.error(request, "Please register or log in to be here!")
+        return redirect('/')
+    context = {
+        'logged_user': Users.objects.get(id=user_id),
+    }
+    return render(request, 'craft_a_pizza_fav.html', context)
+
+def order_page(request):
+    if 'logged_user' not in request.session:
+        messages.error(request, "Please register or log in to be here!")
+        return redirect('/')
+    context = {
+
+    }
+    return render(request, 'order_page.html', context)
+
 def logout(request):
     request.session.flush()
     return redirect('/')

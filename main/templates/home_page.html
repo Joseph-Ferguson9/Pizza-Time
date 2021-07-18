@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Home</title>
+    {% load static %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=News+Cycle&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/font.css' %}">
+    <link rel="stylesheet" href="{% static 'css/home_page.css' %}">
+
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Pizza Time!</h1>
+            <nav>
+                <a href="/home_page">Home</a>
+                <a href="/craft_a_pizza_page">Order</a>
+                <a href="/user/account_page">Account</a>
+                <a href="/user/logout">Logout</a>
+            </nav>
+        </header>
+        <h1 id="loansome">Quick Options</h1>
+        <div id="body-content">
+            <div class="option">
+                <p>Lets make a new order! Click the button below and well get started together making a mean pizza pie!</p>
+                <a href="/craft_a_pizza_page">NEW ORDER</a>
+            </div>
+            <div class="option">
+                <p>Feeling this one again? We get it, once you've had gold why go for anything else.</p>
+                <a href="/craft_a_pizza_page/{{logged_user.id}}">RE-ORDER MY FAVE</a>
+            </div>
+            <div class="option">
+                <p>Can't think of what to get? let the creepy robot in the back make something for you! (don't worry he's programmed to make it safe for human consumption)</p>
+                <a href="/craft_a_pizza_page/random">SURPRISE ME!</a>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Craft-a-Pizza</title>
+    {% load static %}
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=News+Cycle&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="{% static 'css/font.css' %}">
+    <link rel="stylesheet" href="{% static 'css/craft_a_pizza_page.css' %}">
+</head>
+
+<body>
+    <div id="wrapper">
+        <header>
+            <h1>Pizza Time!</h1>
+            <nav>
+                <a href="/home_page">Home</a>
+                <a href="/craft_a_pizza_page">Order</a>
+                <a href="/user/account_page">Account</a>
+                <a href="/user/logout">Logout</a>
+            </nav>
+        </header>
+        <h1 id="loansome">CRAFT-A-PIZZA</h1>
+        <div id="body-content">
+            <form action="#" method="POST">
+                {% csrf_token %}
+                <div class="form_action">
+                    <label for="method">METHOD</label>
+                    <select name="method">
+                        <option value="carry-out">Carry-Out</option>
+                        <option value="delivery">Delivery</option>
+                        <option value="dine-in">Dine-in</option>
+                    </select>
+                </div>
+                <div class="form_action">
+                    <label for="size">SIZE</label>
+                    <select name="size">
+                        <option value="small">Small</option>
+                        <option value="medium">Medium</option>
+                        <option value="large">Large</option>
+                    </select>
+                </div>
+                <div class="form_action">
+                    <label for="crust">CRUST</label>
+                    <select name="crust">
+                        <option value="thin">Thin</option>
+                        <option value="hand-tossed">Hand-tossed</option>
+                        <option value="stuffed">Stuffed</option>
+                    </select>
+                </div>
+                <div class="form_action">
+                    <label for="quanity">QTY</label>
+                    <select name="quanity">
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                        <option value="6">6</option>
+                        <option value="7">7</option>
+                        <option value="8">8</option>
+                        <option value="9">9</option>
+                        <option value="10">10</option>
+                    </select>
+                </div>
+                <div class="form_action">
+                    <label for="toppings">TOPPINGS</label>
+                    <ul>
+                        <li><input type="checkbox" name="toppings">Pepperoni</li>
+                        <li><input type="checkbox" name="toppings">Bacon</li>
+                        <li><input type="checkbox" name="toppings">Chicken</li>
+                        <li><input type="checkbox" name="toppings">Sausage</li>
+                        <li><input type="checkbox" name="toppings">Salami</li>
+                        <li><input type="checkbox" name="toppings">Feta</li>
+                        <li><input type="checkbox" name="toppings">Goat Cheese</li>
+                        <li><input type="checkbox" name="toppings">Jalapeno Peppers</li>
+                        <li><input type="checkbox" name="toppings">Garlic</li>
+                        <li><input type="checkbox" name="toppings">Pistachios</li>
+                        <li><input type="checkbox" name="toppings">Cherry Tamatoes</li>
+                        <li><input type="checkbox" name="toppings">Dried Tamatoes</li>
+                        <li><input type="checkbox" name="toppings">Spinach</li>
+                    </ul>
+                </div>
+                <button type="submit">Order</button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
